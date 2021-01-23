@@ -1,16 +1,21 @@
 import './App.css';
 import React, { Component } from 'react';
 import Home from './components/home.js';
+import Welcome from './components/Welcome';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import AppRouter from './AppRouter';
 
-class App extends Component
+class AppRouter extends Component
 {
   render()
   {
     return(
       <div>
-        <AppRouter />
+        <Router>
+          <div>
+            <Route path="/" component={Home} exact></Route>
+            <Route path="/welcome" component={Welcome}></Route>
+          </div>
+        </Router>
       </div>
     )
 
@@ -28,4 +33,4 @@ class App extends Component
   }
 }
 
-export default App;
+export default AppRouter;
